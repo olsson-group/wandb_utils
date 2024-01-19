@@ -5,7 +5,6 @@ import concurrent
 
 
 def main(args):
-
     api = wandb.Api(overrides={"project": args.project})
     project = api.project(args.project)
 
@@ -19,15 +18,7 @@ def main(args):
                 if artifact_type.type == "model":
                     executor.submit(delete, artifact, args.dry_run)
 
-
     executor.shutdown(wait=True)
-
-    
-
-
-                            
-
-
 
 
 def delete(artifact, dry_run):
