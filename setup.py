@@ -1,3 +1,3 @@
 from setuptools import find_packages, setup
 
-setup(packages=find_packages(), install_requires=["wandb"])
+setup(name="wandb_utils", packages=find_packages(), install_requires=["wandb"])
