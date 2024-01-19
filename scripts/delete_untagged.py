@@ -4,8 +4,6 @@ import wandb
 
 
 def main(args):
-
-
     api = wandb.Api(overrides={"project": args.project})
     project = api.project(args.project)
 
