@@ -1,7 +1,7 @@
+import concurrent
 from argparse import ArgumentParser
 
 import wandb
-import concurrent
 
 
 def main(args):
@@ -11,7 +11,9 @@ def main(args):
     tasks = []
     executor = concurrent.futures.ThreadPoolExecutor(max_workers=20)
 
-    for artifact_type in project.artifacts_types():  # pylint: disable=too-many-nested-blocks
+    for (
+        artifact_type
+    ) in project.artifacts_types():  # pylint: disable=too-many-nested-blocks
         for artifact_collection in artifact_type.collections():
             artifacts = api.artifacts(artifact_type.type, artifact_collection.name)
             for artifact in artifacts:
